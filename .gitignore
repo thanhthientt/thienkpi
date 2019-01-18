@@ -121,7 +121,6 @@ elms/static/v5/bower_components/js-xlsx/test_files/
 /web.config.bk
 performance/templates/performance/bsc/_old/
 storages/
-media/
 .dpl/
 elms/settings_test_local.py
 *debug.txt
