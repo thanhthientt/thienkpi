@@ -1410,3 +1410,8 @@ label.error{
     font-weight: bolder;
     color: #666666;
 }
+#tabs-people .font14, .modal-md .font14{
+        font-size: 14px;
+        padding-bottom: 3px;
+        line-height: 1px;
+}
