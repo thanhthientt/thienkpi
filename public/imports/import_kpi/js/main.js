@@ -229,6 +229,34 @@ methods: {
                 }
             });
         },
+
+    renderHeaderButton(h, {column}) {
+        var self = this
+        var result = h('el-button', {
+            props: {
+                size: 'mini',
+                type: 'primary',
+                icon: 'el-icon-plus'
+            },
+            style: 'font-weight: normal;padding: 2px 4px',
+            on: {
+                click(e) {
+                    if (confirm("Bạn muốn thêm tất cả KPI?")) {
+                        self.kpis.forEach(function (kpi, index) {
+                            if (kpi.msg && kpi.msg.length == 0 && $(`#add_kpi${index}`).length > 0) {
+                                setTimeout(function (index) {
+                                    self.add_kpi(index)
+                                }, 200 + index * 150, index);
+                            }
+                        })
+                    }
+                }
+            }
+        })
+        return h('el-tooltip', {props: {content: "Thêm tất cả", placement: "top"}}, [result])
+    },
+
+
     arraySpanMethod({ row, column, rowIndex, columnIndex }) {
         if (columnIndex === 0) {
             return [0, 0];
